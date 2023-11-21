@@ -25,6 +25,9 @@
                                 ISBN
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Created At
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Action
                             </th>
                         </tr>
