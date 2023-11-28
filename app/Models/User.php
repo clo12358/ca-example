@@ -51,8 +51,8 @@ class User extends Authenticatable
         return null !== $this->roles()->where('name', $role)->first();
     }
 
-    public function hasAnyRole($role) {
-        return null !== $this->roles()->whereIn('name', $role)->first();
+    public function hasAnyRole($roles) {
+        return null !== $this->roles()->whereIn('name', $roles)->first();
     }
 
     public function authorizeRoles($roles) {
@@ -60,6 +60,6 @@ class User extends Authenticatable
             return $this->hasAnyRoles($roles) || abort(403, "You are not authorized!");
         }
 
-        return $this->hasRoles($roles) || abort(403, "You are not authorized!");
+        return $this->hasRole($roles) || abort(403, "You are not authorized!");
     }
 }
